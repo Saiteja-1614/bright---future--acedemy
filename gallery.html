@@ -1,20 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Gallery | Bright Future Academy</title>
-
-    <meta name="description" content="View our classrooms, laboratories, library, campus and student activities.">
-
-    <meta name="keywords" content="academy gallery, classroom, library, computer lab, students">
-
-    <link rel="stylesheet" href="style.css">
-
     <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background: #f4f4f4; }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #1a73e8;
+            padding: 15px 40px;
+        }
+        nav .logo h2 { color: white; }
+        nav ul { list-style: none; display: flex; gap: 25px; }
+        nav ul li a { color: white; text-decoration: none; font-size: 15px; }
+        nav ul li a:hover { color: #ffd600; }
+
+        section { padding: 50px 40px; }
+        h1 { text-align: center; margin-bottom: 10px; color: #1a73e8; }
+        p { text-align: center; margin-bottom: 30px; color: #666; }
 
         .gallery {
             display: grid;
@@ -22,45 +30,34 @@
             gap: 20px;
             max-width: 1100px;
             margin: 0 auto;
-            padding: 20px;
         }
 
         .gallery-item {
-            position: relative;
-            overflow: hidden;
             border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            position: relative;
         }
 
         .gallery-card {
-            width: 100%;
             height: 220px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            color: white;
             font-size: 18px;
             font-weight: bold;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover .gallery-card { transform: scale(1.05); }
+
+        .gallery-card span { font-size: 50px; margin-bottom: 10px; }
+
+        .caption {
+            background: rgba(0,0,0,0.6);
             color: white;
-            transition: transform 0.3s ease;
-        }
-
-        .gallery-card span {
-            font-size: 48px;
-            margin-bottom: 10px;
-        }
-
-        .gallery-item:hover .gallery-card {
-            transform: scale(1.05);
-        }
-
-        .gallery-item .caption {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(0,0,0,0.55);
-            color: #fff;
             text-align: center;
             padding: 8px;
             font-size: 14px;
@@ -73,116 +70,90 @@
         .bg5 { background: linear-gradient(135deg, #8e24aa, #4a148c); }
         .bg6 { background: linear-gradient(135deg, #00897b, #004d40); }
 
-        @media (max-width: 768px) {
-            .gallery { grid-template-columns: repeat(2, 1fr); }
+        footer {
+            background: #1a73e8;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
         }
 
+        @media (max-width: 768px) {
+            .gallery { grid-template-columns: repeat(2, 1fr); }
+            nav { flex-direction: column; gap: 10px; }
+        }
         @media (max-width: 480px) {
             .gallery { grid-template-columns: 1fr; }
         }
-
     </style>
-
 </head>
-
 <body>
 
-    <!-- Navigation -->
-
     <nav>
-
-        <div class="logo">
-            <h2>Bright Future Academy</h2>
-        </div>
-
+        <div class="logo"><h2>Bright Future Academy</h2></div>
         <ul>
-
             <li><a href="index.html">Home</a></li>
-
             <li><a href="about.html">About</a></li>
-
             <li><a href="courses.html">Courses</a></li>
-
             <li><a href="gallery.html">Gallery</a></li>
-
             <li><a href="contact.html">Contact</a></li>
-
         </ul>
-
     </nav>
 
-    <!-- Gallery -->
-
     <section>
-
-        <h1 style="text-align:center;">Our Gallery</h1>
-
-        <p style="text-align:center; margin-bottom:30px;">
-            Take a look at our campus, classrooms and learning environment.
-        </p>
+        <h1>Our Gallery</h1>
+        <p>Take a look at our campus, classrooms and learning environment.</p>
 
         <div class="gallery">
 
             <div class="gallery-item">
                 <div class="gallery-card bg1">
-                    <span>🏫</span>
-                    Modern Classroom
+                    <span>🏫</span>Modern Classroom
                 </div>
                 <div class="caption">Modern Classroom</div>
             </div>
 
             <div class="gallery-item">
                 <div class="gallery-card bg2">
-                    <span>💻</span>
-                    Computer Laboratory
+                    <span>💻</span>Computer Laboratory
                 </div>
                 <div class="caption">Computer Laboratory</div>
             </div>
 
             <div class="gallery-item">
                 <div class="gallery-card bg3">
-                    <span>📚</span>
-                    Academy Library
+                    <span>📚</span>Academy Library
                 </div>
                 <div class="caption">Academy Library</div>
             </div>
 
             <div class="gallery-item">
                 <div class="gallery-card bg4">
-                    <span>👨‍🏫</span>
-                    Teacher Teaching Students
+                    <span>👨‍🏫</span>Teacher Teaching Students
                 </div>
                 <div class="caption">Teacher Teaching Students</div>
             </div>
 
             <div class="gallery-item">
                 <div class="gallery-card bg5">
-                    <span>👩‍🎓</span>
-                    Students Learning Together
+                    <span>👩‍🎓</span>Students Learning Together
                 </div>
                 <div class="caption">Students Learning Together</div>
             </div>
 
             <div class="gallery-item">
                 <div class="gallery-card bg6">
-                    <span>🏛️</span>
-                    Academy Campus
+                    <span>🏛️</span>Academy Campus
                 </div>
                 <div class="caption">Academy Campus</div>
             </div>
 
         </div>
-
     </section>
 
-    <!-- Footer -->
-
     <footer>
-
         <p>&copy; 2026 Bright Future Academy. All Rights Reserved.</p>
-
     </footer>
 
 </body>
-
 </html>
